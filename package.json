@@ -54,6 +54,8 @@
     "rebuild-node": "yarn workspace loot-core rebuild",
     "lint": "oxfmt --check . && oxlint --deny-warnings && eslint . --max-warnings 0",
     "lint:fix": "oxfmt . && oxlint --deny-warnings --fix && eslint . --max-warnings 0 --fix",
+    "fmt:eslint": "eslint . --max-warnings 0 --fix",
+    "fmt:oxfmt": "oxfmt .",
     "install:server": "yarn workspaces focus @actual-app/sync-server --production",
     "typecheck": "yarn tsc --incremental && tsc-strict",
     "jq": "./node_modules/node-jq/bin/jq",
