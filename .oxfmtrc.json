@@ -5,6 +5,35 @@
   "arrowParens": "avoid",
   "printWidth": 80,
   "ignorePatterns": [
-    "packages/docs/*" // TOOD: fixme; temporary
-  ]
+    "packages/docs/*", // TOOD: fixme; temporary
+    ".github/*",
+    "**/*.json",
+  ],
+  "experimentalSortImports": {
+    "groups": [
+      ["react"],
+      ["builtin"],
+      ["external"],
+      ["loot-core"],
+      ["parent"],
+      ["sibling"],
+      ["index"],
+      ["desktop-client"]
+    ],
+    "customGroups": [
+      {
+        "name": "react",
+        "anyOf": [{ "elementNamePattern": "react" }]
+      },
+      {
+        "name": "loot-core",
+        "anyOf": [{ "elementNamePattern": "loot-core" }]
+      },
+      {
+        "name": "desktop-client",
+        "anyOf": [{ "elementNamePattern": "@desktop-client" }]
+      }
+    ],
+    "newlinesBetween": true
+  }
 }
