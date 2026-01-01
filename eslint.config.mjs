@@ -5,6 +5,15 @@ import { defineConfig } from 'eslint/config';
 
 export default defineConfig(
   {
+    files: ['**/*.js', '**/*.mjs', '**/*.cjs', '**/*.{ts,jsx,tsx}'],
+  },
+  {
+    // > When ignores is used without any other keys (besides name) in the configuration object,
+    // > then the patterns act as global ignores.
+    //
+    // If it's combined with the above `{ files: [...] }`,
+    // `.github/**/*.js`s are still matched by eslint's default option `{ files: ["**/*.js", "**/*.mjs"] }`,
+    // and will be linted
     ignores: [
       'packages/api/app/bundle.api.js',
       'packages/api/app/stats.json',
